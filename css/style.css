@@ -399,8 +399,14 @@ a:hover {
 }
 
 .grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
+}
+
+@media (max-width: 960px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 640px) {
@@ -1254,6 +1260,7 @@ a:hover {
 }
 
 .project-card {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -1343,7 +1350,31 @@ a:hover {
   display: flex;
   gap: var(--space-4);
   margin-top: auto;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+
+.card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.store-badge {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.store-badge:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.store-badge img {
+  display: block;
+  height: 40px;
+  width: auto;
 }
 
 /* ========================================
