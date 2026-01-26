@@ -184,7 +184,8 @@
             aria-label="Simple Handwriting Chatの詳細を見る"></a>
           <div class="project-image-wrapper">
             <div class="project-image-placeholder">
-              <img src="assets/images/simple_handwriting_chat.png" alt="シンプル筆談 icon" class="project-icon-img" style="width: 80px; height: 80px;">
+              <img src="assets/images/simple_handwriting_chat.png" alt="シンプル筆談 icon" class="project-icon-img"
+                style="width: 80px; height: 80px;">
             </div>
           </div>
           <div class="project-content">
@@ -453,18 +454,85 @@
         <h2 class="section-title">aphloを支援する</h2>
         <p class="section-description" style="max-width: 600px; margin: 0 auto 2rem; color: var(--text-secondary);">
           ハピタス経由でお買い物するだけでポイントが貯まります。<br>
-          以下のリンクから登録していただけると、aphloの活動支援になります。
+          下記ボタンか紹介コードで登録していただけるととても励みになります
         </p>
       </div>
 
       <div class="text-center">
-        <a href="https://hapitas.jp/appinvite?i=25638918&route=pcText" target="_blank" rel="noopener" style="display: inline-block; margin-bottom: 1.5rem;">
-          <img src="assets/hapitas/ハピタスの登録はこちら.png" alt="ハピタスの登録はこちら" style="max-width: 350px; width: 100%; height: auto;">
-        </a>
+        <div style="margin-bottom: 1.5rem;">
+          <a href="https://hapitas.jp/appinvite?i=25638918&route=pcText" target="_blank" rel="noopener"
+            style="display: inline-block;">
+            <img src="assets/hapitas/ハピタスの登録はこちら.png" alt="ハピタスの登録はこちら"
+              style="max-width: 350px; width: 100%; height: auto;">
+          </a>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.5rem;">紹介コード（クリックでコピー）</p>
+          <button class="copy-btn" onclick="copyCode(this)"
+            style="background: #f5f5f5; border: 2px dashed #ccc; border-radius: 8px; padding: 0.8rem 1.5rem; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem; position: relative;">
+            <span style="font-weight: bold; color: #333; font-size: 1.2rem; letter-spacing: 0.15em; font-family: monospace;">DOPSYG</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span class="copy-tooltip">コピーしました!</span>
+          </button>
+        </div>
+
+        <style>
+          .copy-btn {
+            position: relative;
+          }
+          .copy-btn:hover {
+            border-color: #999;
+          }
+          .copy-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            margin-bottom: 8px;
+          }
+          .copy-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #333;
+          }
+          .copy-btn.copied .copy-tooltip {
+            opacity: 1;
+            visibility: visible;
+          }
+        </style>
         <p>
           <a href="hapitas.html" style="color: var(--accent); text-decoration: none;">ハピタスについて詳しく見る →</a>
         </p>
       </div>
+
+      <script>
+        function copyCode(btn) {
+          navigator.clipboard.writeText('DOPSYG').then(function () {
+            btn.classList.add('copied');
+            btn.style.borderColor = '#3b82f6';
+            setTimeout(function () {
+              btn.classList.remove('copied');
+              btn.style.borderColor = '';
+            }, 2000);
+          });
+        }
+      </script>
     </div>
   </section>
 

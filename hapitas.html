@@ -65,7 +65,7 @@
       direction: rtl;
     }
 
-    .hapitas-section:nth-child(odd) .hapitas-section-inner > * {
+    .hapitas-section:nth-child(odd) .hapitas-section-inner>* {
       direction: ltr;
     }
 
@@ -156,6 +156,42 @@
       color: #f5a623;
       font-weight: bold;
     }
+
+    .copy-btn {
+      position: relative;
+    }
+    .copy-btn:hover {
+      border-color: #999 !important;
+    }
+    .copy-tooltip {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      margin-bottom: 8px;
+    }
+    .copy-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: #333;
+    }
+    .copy-btn.copied .copy-tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
   </style>
 </head>
 
@@ -193,9 +229,24 @@
         普段のお買い物やサービス利用で、ポイントが貯まる。<br>
         会員数<span class="highlight">500万人以上</span>の安心・安全なポイントサイトです。
       </p>
-      <a href="https://hapitas.jp/appinvite?i=25638918&route=pcText" target="_blank" rel="noopener">
-        <img src="assets/hapitas/ハピタスの登録はこちら.png" alt="ハピタスの登録はこちら" style="max-width: 350px; width: 100%; height: auto;">
-      </a>
+      <div style="margin-bottom: 1rem;">
+        <a href="https://hapitas.jp/appinvite?i=25638918&route=pcText" target="_blank" rel="noopener">
+          <img src="assets/hapitas/ハピタスの登録はこちら.png" alt="ハピタスの登録はこちら"
+            style="max-width: 350px; width: 100%; height: auto;">
+        </a>
+      </div>
+      <div>
+        <p style="color: #555; font-size: 0.85rem; margin-bottom: 0.5rem;">紹介コード（クリックでコピー）</p>
+        <button class="copy-btn" onclick="copyCode(this)"
+          style="background: #fff; border: 2px dashed #ccc; border-radius: 8px; padding: 0.8rem 1.5rem; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem; position: relative;">
+          <span style="font-weight: bold; color: #333; font-size: 1.2rem; letter-spacing: 0.15em; font-family: monospace;">DOPSYG</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span class="copy-tooltip">コピーしました!</span>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -256,7 +307,8 @@
             ハピタスを経由して広告を利用すると、企業からハピタスへ広告費が支払われます。その広告費の一部を、利用してくれたユーザーにポイントとして還元しています。
           </p>
           <p>
-            つまり、<span class="highlight">いつものお買い物にハピタスを経由するだけ</span>で、ショップのポイントとハピタスポイントの<span class="highlight">ダブルでポイント</span>が貯まるのです。
+            つまり、<span class="highlight">いつものお買い物にハピタスを経由するだけ</span>で、ショップのポイントとハピタスポイントの<span
+              class="highlight">ダブルでポイント</span>が貯まるのです。
           </p>
         </div>
         <div class="hapitas-section-image">
@@ -349,12 +401,23 @@
     <div class="container">
       <h2>今すぐハピタスを始めよう</h2>
       <p>登録は無料！カンタン1分で完了します</p>
-      <a href="https://hapitas.jp/appinvite?i=25638918&route=pcText" target="_blank" rel="noopener">
-        <img src="assets/hapitas/ハピタスの登録はこちら.png" alt="ハピタスの登録はこちら">
-      </a>
-      <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #888;">
-        ※このリンクから登録していただけると、aphloの活動支援になります
-      </p>
+      <div style="margin-bottom: 1rem;">
+        <a href="https://hapitas.jp/appinvite?i=25638918&route=pcText" target="_blank" rel="noopener">
+          <img src="assets/hapitas/ハピタスの登録はこちら.png" alt="ハピタスの登録はこちら">
+        </a>
+      </div>
+      <div>
+        <p style="color: #555; font-size: 0.85rem; margin-bottom: 0.5rem;">紹介コード（クリックでコピー）</p>
+        <button class="copy-btn" onclick="copyCode(this)"
+          style="background: #fff; border: 2px dashed #ccc; border-radius: 8px; padding: 0.8rem 1.5rem; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem; position: relative;">
+          <span style="font-weight: bold; color: #333; font-size: 1.2rem; letter-spacing: 0.15em; font-family: monospace;">DOPSYG</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span class="copy-tooltip">コピーしました!</span>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -366,6 +429,18 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    function copyCode(btn) {
+      navigator.clipboard.writeText('DOPSYG').then(function () {
+        btn.classList.add('copied');
+        btn.style.borderColor = '#3b82f6';
+        setTimeout(function () {
+          btn.classList.remove('copied');
+          btn.style.borderColor = '';
+        }, 2000);
+      });
+    }
+  </script>
 </body>
 
 </html>
