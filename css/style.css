@@ -515,7 +515,11 @@ a:hover {
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid var(--border-primary);
-  transition: all var(--duration-base) ease;
+  transition: all var(--duration-base) ease, transform var(--duration-base) ease;
+}
+
+.navbar-hidden {
+  transform: translateY(-100%);
 }
 
 .navbar-container {

@@ -92,6 +92,9 @@ const initNavbarScroll = () => {
 
   let lastScroll = 0;
   const scrollThreshold = 50;
+  const hideThreshold = 10; // Minimum scroll amount to trigger hide/show
+
+  const isMobile = () => window.innerWidth <= 768;
 
   const handleScroll = () => {
     const currentScroll = window.pageYOffset;
@@ -101,6 +104,22 @@ const initNavbarScroll = () => {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
+    }
+
+    // Hide/show navbar on mobile when scrolling
+    if (isMobile()) {
+      const scrollDiff = currentScroll - lastScroll;
+
+      if (scrollDiff > hideThreshold && currentScroll > scrollThreshold) {
+        // Scrolling down - hide navbar
+        navbar.classList.add('navbar-hidden');
+      } else if (scrollDiff < -hideThreshold || currentScroll <= scrollThreshold) {
+        // Scrolling up or at top - show navbar
+        navbar.classList.remove('navbar-hidden');
+      }
+    } else {
+      // Always show on desktop
+      navbar.classList.remove('navbar-hidden');
     }
 
     lastScroll = currentScroll;
@@ -115,6 +134,13 @@ const initNavbarScroll = () => {
         ticking = false;
       });
       ticking = true;
+    }
+  });
+
+  // Handle resize events
+  window.addEventListener('resize', () => {
+    if (!isMobile()) {
+      navbar.classList.remove('navbar-hidden');
     }
   });
 

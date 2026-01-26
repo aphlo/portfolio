@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ハピタスでポイ活 - aphloを支援">
+  <meta name="keywords" content="ハピタス, ポイ活, ポイントサイト">
+  <title>ハピタスでポイ活 | aphlo</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐻‍❄️</text></svg>">
+  <style>
+    .hapitas-hero {
+      padding: 120px 0 60px;
+      text-align: center;
+      background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+    }
+
+    .hapitas-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .hapitas-hero p {
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.8;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #555;
+      text-decoration: none;
+      margin-bottom: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: var(--accent);
+    }
+
+    .hapitas-section {
+      padding: 80px 0;
+    }
+
+    .hapitas-section:nth-child(even) {
+      background: var(--bg-secondary);
+    }
+
+    .hapitas-section-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .hapitas-section:nth-child(odd) .hapitas-section-inner {
+      direction: rtl;
+    }
+
+    .hapitas-section:nth-child(odd) .hapitas-section-inner > * {
+      direction: ltr;
+    }
+
+    .hapitas-section-text h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .hapitas-section-text p {
+      color: var(--text-secondary);
+      line-height: 1.9;
+      margin-bottom: 1rem;
+    }
+
+    .hapitas-section-text ul {
+      color: var(--text-secondary);
+      line-height: 2;
+      padding-left: 1.5rem;
+    }
+
+    .hapitas-section-text ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .hapitas-section-image a {
+      display: block;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hapitas-section-image a:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .hapitas-section-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .hapitas-section-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .hapitas-section:nth-child(odd) .hapitas-section-inner {
+        direction: ltr;
+      }
+
+      .hapitas-hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hapitas-section-text h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 60px 0;
+      background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+    }
+
+    .cta-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .cta-section p {
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-section img {
+      max-width: 350px;
+      width: 100%;
+      height: auto;
+    }
+
+    .highlight {
+      color: #f5a623;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container container">
+      <a href="index.html" class="navbar-logo">aphlo</a>
+      <ul class="navbar-menu">
+        <li><a href="index.html#products" class="navbar-link">Products</a></li>
+        <li><a href="index.html#about" class="navbar-link">About</a></li>
+        <li><a href="index.html#experience" class="navbar-link">Experience</a></li>
+        <li><a href="index.html#skills" class="navbar-link">Skills</a></li>
+        <li><a href="index.html#support" class="navbar-link">Support</a></li>
+      </ul>
+      <button class="navbar-toggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hapitas-hero">
+    <div class="container">
+      <a href="index.html" class="back-link">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        トップページに戻る
+      </a>
+      <h1>ハピタスでポイ活を始めよう</h1>
+      <p>
+        普段のお買い物やサービス利用で、ポイントが貯まる。<br>
+        会員数<span class="highlight">500万人以上</span>の安心・安全なポイントサイトです。
+      </p>
+      <a href="https://hapitas.jp/appinvite?i=25638918&route=pcText" target="_blank" rel="noopener">
+        <img src="assets/hapitas/ハピタスの登録はこちら.png" alt="ハピタスの登録はこちら" style="max-width: 350px; width: 100%; height: auto;">
+      </a>
+    </div>
+  </section>
+
+  <!-- ハピタスとは？ -->
+  <section class="hapitas-section">
+    <div class="container">
+      <div class="hapitas-section-inner">
+        <div class="hapitas-section-text">
+          <h2>ハピタスとは？</h2>
+          <p>
+            ハピタスは、普段のお買い物やサービスの申し込みを<span class="highlight">ハピタス経由</span>で行うだけで、ショップのポイントに加えてハピタスポイントも貯まるポイントサイトです。
+          </p>
+          <p>
+            貯めたポイントは<span class="highlight">1ポイント＝1円</span>で現金や電子マネー、ギフト券などに交換できます。
+          </p>
+        </div>
+        <div class="hapitas-section-image">
+          <a href="https://hapitas.jp/appinvite?i=25638918&route=pcText" target="_blank" rel="noopener">
+            <img src="assets/hapitas/ハピタスとは.png" alt="ハピタスとは">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ハピタスの特徴 -->
+  <section class="hapitas-section">
+    <div class="container">
+      <div class="hapitas-section-inner">
+        <div class="hapitas-section-text">
+          <h2>ハピタスの特徴</h2>
+          <ul>
+            <li><span class="highlight">会員数500万人</span>突破の大手ポイントサイト</li>
+            <li>運営実績<span class="highlight">15年以上</span>の安心感</li>
+            <li>業界最高水準の還元率</li>
+            <li>無料で利用できる</li>
+            <li>1ポイント＝1円でわかりやすい</li>
+            <li>充実のサポート体制</li>
+            <li>プライバシーマーク取得済み</li>
+          </ul>
+        </div>
+        <div class="hapitas-section-image">
+          <a href="https://hapitas.jp/appinvite?i=25638918&route=pcText" target="_blank" rel="noopener">
+            <img src="assets/hapitas/ハピタスの特徴.png" alt="ハピタスの特徴">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ハピタスの仕組み -->
+  <section class="hapitas-section">
+    <div class="container">
+      <div class="hapitas-section-inner">
+        <div class="hapitas-section-text">
+          <h2>ハピタスの仕組み</h2>
+          <p>
+            ハピタスを経由して広告を利用すると、企業からハピタスへ広告費が支払われます。その広告費の一部を、利用してくれたユーザーにポイントとして還元しています。
+          </p>
+          <p>
+            つまり、<span class="highlight">いつものお買い物にハピタスを経由するだけ</span>で、ショップのポイントとハピタスポイントの<span class="highlight">ダブルでポイント</span>が貯まるのです。
+          </p>
+        </div>
+        <div class="hapitas-section-image">
+          <a href="https://hapitas.jp/appinvite?i=25638918&route=pcText" target="_blank" rel="noopener">
+            <img src="assets/hapitas/ハピタスの仕組み.png" alt="ハピタスの仕組み">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ポイントの貯め方 -->
+  <section class="hapitas-section">
+    <div class="container">
+      <div class="hapitas-section-inner">
+        <div class="hapitas-section-text">
+          <h2>ポイントの貯め方</h2>
+          <p>
+            ハピタスでは<span class="highlight">3,000件以上</span>のショッピングサイトやサービスを取り扱っています。いつも利用しているショップやサービスを探してぜひ活用してみましょう。
+          </p>
+          <ul>
+            <li>ネットショッピング（楽天市場、Yahoo!ショッピングなど）</li>
+            <li>レストランや宿泊予約</li>
+            <li>デリバリーサービス</li>
+            <li>クレジットカード発行・口座開設</li>
+            <li>無料登録などのサービス</li>
+            <li>アンケート回答</li>
+          </ul>
+        </div>
+        <div class="hapitas-section-image">
+          <a href="https://hapitas.jp/appinvite?i=25638918&route=pcText" target="_blank" rel="noopener">
+            <img src="assets/hapitas/ポイントの貯め方.png" alt="ポイントの貯め方">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ポイントの使い道 -->
+  <section class="hapitas-section">
+    <div class="container">
+      <div class="hapitas-section-inner">
+        <div class="hapitas-section-text">
+          <h2>ポイントの使い道</h2>
+          <p>
+            貯まったポイントは<span class="highlight">15種類以上</span>の交換先から選べます。現金はもちろん、普段使いしやすい電子マネーやギフト券にも交換可能です。
+          </p>
+          <ul>
+            <li>現金（銀行振込）</li>
+            <li>Amazonギフトカード</li>
+            <li>楽天ポイント</li>
+            <li>dポイント</li>
+            <li>PayPayポイント</li>
+            <li>その他多数の電子マネー・ギフト券</li>
+          </ul>
+        </div>
+        <div class="hapitas-section-image">
+          <a href="https://hapitas.jp/appinvite?i=25638918&route=pcText" target="_blank" rel="noopener">
+            <img src="assets/hapitas/ポイントの使い道.png" alt="ポイントの使い道">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 安心の保証制度 -->
+  <section class="hapitas-section">
+    <div class="container">
+      <div class="hapitas-section-inner">
+        <div class="hapitas-section-text">
+          <h2>安心の保証制度</h2>
+          <p>
+            「ポイントがちゃんと付くか不安...」という方もご安心ください。ハピタスには<span class="highlight">お買い物あんしん保証</span>があります。
+          </p>
+          <p>
+            ハピタスを経由したにも関わらずポイント通帳に記載されなかったお買い物に対して、ポイントを付与させていただく制度です。万が一の時も安心してご利用いただけます。
+          </p>
+        </div>
+        <div class="hapitas-section-image">
+          <a href="https://hapitas.jp/appinvite?i=25638918&route=pcText" target="_blank" rel="noopener">
+            <img src="assets/hapitas/安心の保証制度.png" alt="安心の保証制度">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>今すぐハピタスを始めよう</h2>
+      <p>登録は無料！カンタン1分で完了します</p>
+      <a href="https://hapitas.jp/appinvite?i=25638918&route=pcText" target="_blank" rel="noopener">
+        <img src="assets/hapitas/ハピタスの登録はこちら.png" alt="ハピタスの登録はこちら">
+      </a>
+      <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #888;">
+        ※このリンクから登録していただけると、aphloの活動支援になります
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container container">
+      <p class="footer-text">© aphlo All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
